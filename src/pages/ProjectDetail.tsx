@@ -49,19 +49,20 @@ export function ProjectDetail() {
         )}
       </div>
 
-      <section className="project-detail-section">
-        <h2>About</h2>
+      <section className="project-detail-section project-detail-about">
+        <h2>What is it?</h2>
         <p>{project.description}</p>
       </section>
 
-      <section className="project-detail-section">
-        <h2>Technology</h2>
+      <details className="project-detail-technical">
+        <summary>Technical details</summary>
+        <p>{project.technicalDescription}</p>
         <ul className="tech-list">
           {project.techStack.map((tech) => (
             <li key={tech}>{tech}</li>
           ))}
         </ul>
-      </section>
+      </details>
     </main>
   );
 }

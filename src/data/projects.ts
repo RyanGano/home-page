@@ -8,6 +8,7 @@ export interface Project {
   name: string;
   tagline: string;
   description: string;
+  technicalDescription: string;
   tags: string[];
   techStack: string[];
   links: ProjectLinks;
@@ -20,7 +21,9 @@ export const projects: Project[] = [
     tagline:
       "A growing library of interactive mystery stories with multiple endings",
     description:
-      "A library of original mystery short stories (started as the payoff site for the novel Within Tolerance, whose unresolved ending points readers here), each readable online with several weighted-random alternate endings, cross-referenced clues linking each reveal back to its foreshadowing, and a rare hidden ending. Every book is entirely data-driven with no book-specific content in the code, so new stories ship without a redeploy, backed by an author-facing tooling pipeline that syncs local content into Cosmos DB.",
+      "A growing library of original mystery short stories, started as the payoff site for the novel Within Tolerance, whose unresolved ending points readers here. Each story is readable online with several alternate endings that change from read to read, clues that tie back to their earlier foreshadowing, and a rare hidden ending for anyone who looks closely enough.",
+    technicalDescription:
+      "Every book is entirely data-driven with no book-specific content in the code, so new stories ship without a redeploy, backed by an author-facing tooling pipeline that syncs local content into Cosmos DB.",
     tags: [
       "React",
       "TypeScript",
@@ -53,7 +56,9 @@ export const projects: Project[] = [
     name: "Goal Reacher",
     tagline: "Financial tracking with shared household budgets and receipt OCR",
     description:
-      "A personal financial-tracking app for managing bank accounts (registers), nested sub-registers for sinking funds, spending categories, and recurring or scheduled transactions. Supports shared multi-user household access, forecasting charts, and a no-login 'Try It Out' trial mode so visitors can explore before creating an account.",
+      "A personal finance app for managing bank accounts, savings goals, spending categories, and recurring or scheduled bills. Supports shared household access for multiple people, forecasting charts to see where your money is headed, snapping a photo of a receipt to log it automatically, and a no-login 'Try It Out' mode so visitors can explore before creating an account.",
+    technicalDescription:
+      "Receipt photos are parsed via Azure Document Intelligence, data lives in Cosmos DB, and shared household access is secured through Microsoft Entra ID.",
     tags: [
       "React",
       "TypeScript",
@@ -88,7 +93,9 @@ export const projects: Project[] = [
     name: "When to Drive",
     tagline: "Live road and weather conditions for a specific mountain drive",
     description:
-      "A travel-planning utility that shows live road and weather conditions, webcams, and forecasts for the mountain passes along a chosen driving route. Aggregates state DOT traffic data and weather APIs into a single real-time dashboard for trip planning.",
+      "A travel-planning utility that shows live road and weather conditions, webcams, and forecasts for the mountain passes along a chosen driving route, so you can decide when it's actually a good time to hit the road.",
+    technicalDescription:
+      "Aggregates state DOT traffic data and weather APIs into a single real-time dashboard, orchestrated with .NET Aspire.",
     tags: [
       "React",
       "TypeScript",
@@ -123,7 +130,9 @@ export const projects: Project[] = [
     name: "Skull King Scorer",
     tagline: "Digital scorekeeper for the Skull King card game",
     description:
-      "A digital scoring companion for the physical Skull King card game. Tracks players, bids, tricks, and scores across the game's fixed 10-round structure, with support for the expansion pack, difficulty options, and a random-bid mode. Multiple players see near-real-time updates via short polling with hash-based change detection, without needing a persistent backend.",
+      "A digital scoring companion for the physical Skull King card game. Tracks players, bids, tricks, and scores across the game's fixed 10-round structure, with support for the expansion pack, difficulty options, and a random-bid mode. Everyone at the table sees score updates on their own device in near real time.",
+    technicalDescription:
+      "Multiple players stay in sync via short polling with hash-based change detection, without needing a persistent backend connection.",
     tags: [
       "React",
       "TypeScript",
@@ -151,7 +160,9 @@ export const projects: Project[] = [
     name: "Code Review Trainer",
     tagline: "AI-generated code samples for practicing code review skills",
     description:
-      "An AI-assisted training tool that helps developers practice and sharpen code-review skills. Azure OpenAI generates code samples with intentional issues for the user to review and critique, then evaluates the quality of that review to give feedback.",
+      "A training tool for practicing code review. AI generates code samples with intentionally hidden issues for you to review, then evaluates your review and gives feedback on what you caught and what you missed.",
+    technicalDescription:
+      "Azure OpenAI both generates the flawed code samples and evaluates the quality of submitted reviews.",
     tags: [
       "React",
       "TypeScript",
