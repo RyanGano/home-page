@@ -24,6 +24,7 @@ Gather:
 - `CLAUDE.md` if present — often has a maintained description and architecture notes.
 - Top-level source layout — skim it to sanity-check the README's claims and spot anything
   notable worth tagging (auth method, database, notable APIs, testing setup).
+- Once you think you've gathered enough context about the app, ask targeted questions to fill in any gaps and validate assumptions.
 
 If you're missing enough context to write an accurate paragraph, ask the user rather than
 guessing.
