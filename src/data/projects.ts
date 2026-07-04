@@ -17,9 +17,10 @@ export const projects: Project[] = [
   {
     slug: "ai-mysteries",
     name: "AI Mysteries",
-    tagline: "Interactive alternate endings for the novel Within Tolerance",
+    tagline:
+      "A growing library of interactive mystery stories with multiple endings",
     description:
-      "A companion site for the novel Within Tolerance: the printed book directs readers here for its 'real' ending. The site hosts an interactive library of mystery short stories, each with multiple weighted-random alternate endings, cross-referenced clues, and a rare hidden ending. Content is entirely data-driven, so new stories can be added without touching code, backed by an author-facing tooling pipeline that syncs local content into Cosmos DB.",
+      "A library of original mystery short stories (started as the payoff site for the novel Within Tolerance, whose unresolved ending points readers here), each readable online with several weighted-random alternate endings, cross-referenced clues linking each reveal back to its foreshadowing, and a rare hidden ending. Every book is entirely data-driven with no book-specific content in the code, so new stories ship without a redeploy, backed by an author-facing tooling pipeline that syncs local content into Cosmos DB.",
     tags: [
       "React",
       "TypeScript",
