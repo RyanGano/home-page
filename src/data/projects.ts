@@ -202,4 +202,28 @@ export const projects: Project[] = [
       live: "https://catandomizer.azurewebsites.net/",
     },
   },
+  {
+    slug: "score-keeper",
+    name: "Score Keeper",
+    tagline: "A multi-game digital scorekeeper for tabletop board games",
+    description:
+      "A companion app for keeping score across several tabletop board games from one place, currently supporting Skull King and Roll Through the Ages. Players are added once and remembered between sessions, and each game gets its own tailored scoring UI for that game's specific rules.",
+    technicalDescription:
+      "Built as a create-react-app single-page app with no backend; the active player roster persists client-side via cookies, and each game's scoring logic lives in its own self-contained module under src/games.",
+    tags: ["React", "TypeScript", "Azure Static Web Apps", "Game Companion"],
+    techStack: [
+      "React 18",
+      "TypeScript",
+      "Create React App",
+      "React Bootstrap",
+      "React Router",
+      "react-cookie",
+      "styled-components",
+      "Azure Static Web Apps",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/score-keeper",
+      live: "https://witty-sky-0e20f291e.3.azurestaticapps.net/",
+    },
+  },
 ];
