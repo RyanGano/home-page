@@ -44,7 +44,7 @@ export const projects: Project[] = [
     ],
     links: {
       repo: "https://github.com/RyanGano/ai-mysteries",
-      live: "https://ai-mysteries.ryangano.com",
+      live: "https://ai-mysteries.ryangano.com/",
     },
   },
   {
