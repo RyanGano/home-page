@@ -84,7 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: "route-weather-tracker",
-    name: "Route Weather Tracker",
+    name: "When to Drive",
     tagline: "Live road and weather conditions for a specific mountain drive",
     description:
       "A travel-planning utility that shows live road and weather conditions, webcams, and forecasts for the mountain passes along a chosen driving route. Aggregates state DOT traffic data and weather APIs into a single real-time dashboard for trip planning.",
