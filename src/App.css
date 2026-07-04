@@ -61,16 +61,43 @@
 
 .tag-filter {
   margin-bottom: 32px;
+  padding: 20px 20px 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
+}
+
+.tag-filter-group {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
   flex-wrap: wrap;
+  padding-bottom: 16px;
+}
+
+.tag-filter-group + .tag-filter-group {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.tag-filter-group-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  opacity: 0.7;
+  flex: 0 0 110px;
 }
 
 .tag-filter-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  flex: 1;
 }
 
 .tag-chip {
@@ -79,7 +106,7 @@
   padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-alt);
   color: var(--text);
   cursor: pointer;
   transition: border-color 0.15s, color 0.15s, background 0.15s;
@@ -104,8 +131,9 @@
   border: none;
   cursor: pointer;
   text-decoration: underline;
-  padding: 0;
+  padding: 0 0 16px;
   white-space: nowrap;
+  align-self: flex-start;
 }
 
 .project-grid {

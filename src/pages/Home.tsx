@@ -1,19 +1,35 @@
 import { useMemo, useState } from "react";
 import { projects } from "../data/projects";
+import { TAG_GROUPS } from "../data/tagGroups";
 import { ProjectCard } from "../components/ProjectCard";
 import { TagFilter } from "../components/TagFilter";
 
 export function Home() {
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
-  const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
+  const tagGroups = useMemo(() => {
+    const present = new Set<string>();
     for (const project of projects) {
       for (const tag of project.tags) {
-        tagSet.add(tag);
+        present.add(tag);
       }
     }
-    return Array.from(tagSet).sort();
+
+    const used = new Set<string>();
+    const grouped = TAG_GROUPS.map((group) => ({
+      label: group.label,
+      tags: group.tags.filter((tag) => present.has(tag)),
+    })).filter((group) => group.tags.length > 0);
+    grouped.forEach((group) => group.tags.forEach((tag) => used.add(tag)));
+
+    const leftover = Array.from(present)
+      .filter((tag) => !used.has(tag))
+      .sort();
+    if (leftover.length > 0) {
+      grouped.push({ label: "Other", tags: leftover });
+    }
+
+    return grouped;
   }, []);
 
   const visibleProjects = useMemo(() => {
@@ -44,7 +60,7 @@ export function Home() {
       </section>
 
       <TagFilter
-        tags={allTags}
+        groups={tagGroups}
         activeTags={activeTags}
         onToggle={toggleTag}
         onClear={() => setActiveTags(new Set())}

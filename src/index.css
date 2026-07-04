@@ -1,9 +1,10 @@
 :root {
   --text: #4b5563;
   --text-h: #0f1115;
-  --bg: #fbfbfc;
+  --bg: #e9ecf2;
   --surface: #ffffff;
-  --border: #e5e4e7;
+  --surface-alt: #f2f4f8;
+  --border: #d6dae2;
   --accent: #2f5fdb;
   --accent-bg: rgba(47, 95, 219, 0.08);
   --accent-border: rgba(47, 95, 219, 0.35);
@@ -28,6 +29,7 @@
     --text-h: #f3f4f6;
     --bg: #12131a;
     --surface: #1a1c25;
+    --surface-alt: #20222c;
     --border: #2e303a;
     --accent: #7f9dff;
     --accent-bg: rgba(127, 157, 255, 0.12);

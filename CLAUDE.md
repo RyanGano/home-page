@@ -32,6 +32,10 @@ technology/idea tags, linking out to each project's live demo and (when public) 
 Use the `add-portfolio-project` skill (see `.claude/skills/`), which walks through gathering the
 project's description, tech stack, tags, and links, then adds it to `src/data/projects.ts`.
 
+## Workflow
+
+- Always commit and push after verifying the work.
+
 ## Deployment
 
 Currently developed and run locally only. Intended to be hosted on Azure (Static Web Apps, matching
