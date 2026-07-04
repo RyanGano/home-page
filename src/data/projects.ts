@@ -183,4 +183,23 @@ export const projects: Project[] = [
       live: "https://codereviewtrainer.com/",
     },
   },
+  {
+    slug: "catandomizer",
+    name: "Catandomizer",
+    tagline: "Generates random, valid board layouts for Settlers of Catan",
+    description:
+      "A companion tool for the Settlers of Catan tabletop game that builds a randomized but valid board layout, including harbors and number tokens, so players don't have to shuffle tiles by hand. Layouts can be recalculated on demand, reproduced later from a shareable ID, or reset to the game's standard beginner layout.",
+    technicalDescription:
+      "A Blazor WebAssembly frontend renders the hex board client-side from JSON returned by a separate ASP.NET Core minimal API, which owns the board generation and validation logic.",
+    tags: [".NET", "Blazor", "Azure App Service", "Game Companion"],
+    techStack: [
+      "Blazor WebAssembly",
+      "ASP.NET Core minimal API",
+      "Azure App Service",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/Catandomizer",
+      live: "https://catandomizer.azurewebsites.net/",
+    },
+  },
 ];
