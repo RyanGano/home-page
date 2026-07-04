@@ -28,12 +28,22 @@ export function ProjectDetail() {
 
       <div className="project-detail-links">
         {project.links.live && (
-          <a href={project.links.live} target="_blank" rel="noreferrer" className="btn btn-primary">
+          <a
+            href={project.links.live}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary"
+          >
             View live site
           </a>
         )}
         {project.links.repo && (
-          <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn btn-secondary">
+          <a
+            href={project.links.repo}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-secondary"
+          >
             View source on GitHub
           </a>
         )}

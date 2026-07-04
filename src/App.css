@@ -109,7 +109,10 @@
   background: var(--surface-alt);
   color: var(--text);
   cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s;
 }
 
 .tag-chip:hover {
@@ -151,7 +154,9 @@
   text-decoration: none;
   color: inherit;
   box-shadow: var(--shadow);
-  transition: transform 0.15s, border-color 0.15s;
+  transition:
+    transform 0.15s,
+    border-color 0.15s;
 }
 
 .project-card:hover {

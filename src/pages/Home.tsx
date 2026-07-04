@@ -34,7 +34,9 @@ export function Home() {
 
   const visibleProjects = useMemo(() => {
     if (activeTags.size === 0) return projects;
-    return projects.filter((project) => project.tags.some((tag) => activeTags.has(tag)));
+    return projects.filter((project) =>
+      project.tags.some((tag) => activeTags.has(tag)),
+    );
   }, [activeTags]);
 
   function toggleTag(tag: string) {
@@ -54,8 +56,9 @@ export function Home() {
       <section className="intro">
         <h1>A directory of things I&apos;ve built</h1>
         <p>
-          Full-stack apps, tools, and experiments spanning React, .NET, Azure, and AI.
-          Filter by tag to find what interests you, or browse everything below.
+          Full-stack apps, tools, and experiments spanning React, .NET, Azure,
+          and AI. Filter by tag to find what interests you, or browse everything
+          below.
         </p>
       </section>
 

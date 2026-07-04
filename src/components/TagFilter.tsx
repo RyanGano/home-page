@@ -7,7 +7,12 @@ interface TagFilterProps {
   onClear: () => void;
 }
 
-export function TagFilter({ groups, activeTags, onToggle, onClear }: TagFilterProps) {
+export function TagFilter({
+  groups,
+  activeTags,
+  onToggle,
+  onClear,
+}: TagFilterProps) {
   return (
     <div className="tag-filter">
       {groups.map((group) => (

@@ -35,6 +35,9 @@ project's description, tech stack, tags, and links, then adds it to `src/data/pr
 ## Workflow
 
 - Always commit and push after verifying the work.
+- Always lint (`npm run lint`) and format (`npm run format`) files before committing.
+  `npm run build` also runs lint and a format check (`format:check`) and fails if
+  either finds unformatted files, so unformatted code won't build in CI either.
 
 ## Deployment
 

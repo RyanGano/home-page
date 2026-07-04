@@ -17,7 +17,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         ))}
         {project.tags.length > 5 && (
-          <span className="tag-pill tag-pill-more">+{project.tags.length - 5}</span>
+          <span className="tag-pill tag-pill-more">
+            +{project.tags.length - 5}
+          </span>
         )}
       </div>
     </Link>
