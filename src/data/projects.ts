@@ -21,7 +21,7 @@ export const projects: Project[] = [
     tagline:
       "A growing library of interactive mystery stories with multiple endings",
     description:
-      "A growing library of original mystery short stories, started as the payoff site for the novel Within Tolerance, whose unresolved ending points readers here. Each story is readable online with several alternate endings that change from read to read, clues that tie back to their earlier foreshadowing, and a rare hidden ending for anyone who looks closely enough.",
+      "A growing library of AI-generated mystery short stories, each readable online from start to finish. Every mystery has several possible endings that change from read to read, with clues that tie back to their earlier foreshadowing — and a rare special ending waiting for anyone who looks closely enough.",
     technicalDescription:
       "Every book is entirely data-driven with no book-specific content in the code, so new stories ship without a redeploy, backed by an author-facing tooling pipeline that syncs local content into Cosmos DB.",
     tags: [
