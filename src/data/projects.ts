@@ -12,6 +12,11 @@ export function amazonSearchUrl(query: string): string {
   return `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_ASSOCIATE_TAG}`;
 }
 
+/** Builds a clean Amazon product URL for an ASIN, tagged with our Associate ID. */
+export function amazonProductUrl(asin: string): string {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
+}
+
 /** A physical game a companion app is built for, linked via Amazon Associates. */
 export interface RelatedGame {
   name: string;
@@ -173,7 +178,11 @@ export const projects: Project[] = [
     relatedGames: [
       {
         name: "Skull King",
-        amazonUrl: amazonSearchUrl("Skull King card game"),
+        amazonUrl: amazonProductUrl("B00CK1EJG8"),
+      },
+      {
+        name: "Skull King Expansion",
+        amazonUrl: amazonProductUrl("B0FTBPFLQK"),
       },
     ],
   },
@@ -260,7 +269,7 @@ export const projects: Project[] = [
       },
       {
         name: "Skull King",
-        amazonUrl: amazonSearchUrl("Skull King card game"),
+        amazonUrl: amazonProductUrl("B00CK1EJG8"),
       },
     ],
   },
