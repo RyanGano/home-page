@@ -54,6 +54,28 @@ export function ProjectDetail() {
         <p>{project.description}</p>
       </section>
 
+      {project.relatedGames && project.relatedGames.length > 0 && (
+        <section className="project-detail-section project-detail-games">
+          <h2>Get the game</h2>
+          <p>
+            This is a companion app for a physical tabletop game. Grab a copy on
+            Amazon:
+          </p>
+          <ul className="related-games-list">
+            {project.relatedGames.map((game) => (
+              <li key={game.name}>
+                <a href={game.amazonUrl} target="_blank" rel="noreferrer">
+                  {game.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="affiliate-disclosure">
+            As an Amazon Associate I earn from qualifying purchases.
+          </p>
+        </section>
+      )}
+
       <details className="project-detail-technical">
         <summary>Technical details</summary>
         <p>{project.technicalDescription}</p>

@@ -3,6 +3,21 @@ export interface ProjectLinks {
   live?: string;
 }
 
+/** Amazon Associates tracking tag used for affiliate links to the tabletop
+ * games these companion apps are built around. */
+export const AMAZON_ASSOCIATE_TAG = "aworldchanger-20";
+
+/** Builds an Amazon search URL tagged with our Associate ID. */
+export function amazonSearchUrl(query: string): string {
+  return `https://www.amazon.com/s?k=${encodeURIComponent(query)}&tag=${AMAZON_ASSOCIATE_TAG}`;
+}
+
+/** A physical game a companion app is built for, linked via Amazon Associates. */
+export interface RelatedGame {
+  name: string;
+  amazonUrl: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -12,6 +27,7 @@ export interface Project {
   tags: string[];
   techStack: string[];
   links: ProjectLinks;
+  relatedGames?: RelatedGame[];
 }
 
 export const projects: Project[] = [
@@ -154,6 +170,12 @@ export const projects: Project[] = [
       repo: "https://github.com/RyanGano/skull-king",
       live: "https://skullk.ing/",
     },
+    relatedGames: [
+      {
+        name: "Skull King",
+        amazonUrl: amazonSearchUrl("Skull King card game"),
+      },
+    ],
   },
   {
     slug: "code-review-trainer",
@@ -201,6 +223,12 @@ export const projects: Project[] = [
       repo: "https://github.com/RyanGano/Catandomizer",
       live: "https://catandomizer.azurewebsites.net/",
     },
+    relatedGames: [
+      {
+        name: "CATAN (Settlers of Catan)",
+        amazonUrl: amazonSearchUrl("Catan board game"),
+      },
+    ],
   },
   {
     slug: "score-keeper",
@@ -225,5 +253,15 @@ export const projects: Project[] = [
       repo: "https://github.com/RyanGano/score-keeper",
       live: "https://witty-sky-0e20f291e.3.azurestaticapps.net/",
     },
+    relatedGames: [
+      {
+        name: "Roll Through the Ages",
+        amazonUrl: amazonSearchUrl("Roll Through the Ages board game"),
+      },
+      {
+        name: "Skull King",
+        amazonUrl: amazonSearchUrl("Skull King card game"),
+      },
+    ],
   },
 ];

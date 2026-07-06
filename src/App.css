@@ -350,6 +350,29 @@
   font-size: 18px;
 }
 
+.project-detail-games h2 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.project-detail-games p {
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.related-games-list {
+  margin: 10px 0 14px;
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.affiliate-disclosure {
+  font-size: 13px !important;
+  opacity: 0.7;
+  font-style: italic;
+}
+
 .project-detail-technical {
   margin-bottom: 28px;
   padding: 14px 16px;
