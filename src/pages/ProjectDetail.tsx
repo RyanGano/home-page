@@ -1,7 +1,9 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
+import { useTechInfo } from "../context/techInfo";
 
 export function ProjectDetail() {
+  const { showTech } = useTechInfo();
   const { slug } = useParams<{ slug: string }>();
   const project = projects.find((p) => p.slug === slug);
 
@@ -18,13 +20,15 @@ export function ProjectDetail() {
       <h1>{project.name}</h1>
       <p className="project-detail-tagline">{project.tagline}</p>
 
-      <div className="project-detail-tags">
-        {project.tags.map((tag) => (
-          <span key={tag} className="tag-pill">
-            {tag}
-          </span>
-        ))}
-      </div>
+      {showTech && (
+        <div className="project-detail-tags">
+          {project.tags.map((tag) => (
+            <span key={tag} className="tag-pill">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="project-detail-links">
         {project.links.live && (
@@ -76,15 +80,17 @@ export function ProjectDetail() {
         </section>
       )}
 
-      <details className="project-detail-technical">
-        <summary>Technical details</summary>
-        <p>{project.technicalDescription}</p>
-        <ul className="tech-list">
-          {project.techStack.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
-      </details>
+      {showTech && (
+        <details className="project-detail-technical">
+          <summary>Technical details</summary>
+          <p>{project.technicalDescription}</p>
+          <ul className="tech-list">
+            {project.techStack.map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
+        </details>
+      )}
     </main>
   );
 }

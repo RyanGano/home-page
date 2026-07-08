@@ -3,8 +3,10 @@ import { projects } from "../data/projects";
 import { TAG_GROUPS } from "../data/tagGroups";
 import { ProjectCard } from "../components/ProjectCard";
 import { TagFilter } from "../components/TagFilter";
+import { useTechInfo } from "../context/techInfo";
 
 export function Home() {
+  const { showTech } = useTechInfo();
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
   const tagGroups = useMemo(() => {
@@ -33,11 +35,11 @@ export function Home() {
   }, []);
 
   const visibleProjects = useMemo(() => {
-    if (activeTags.size === 0) return projects;
+    if (!showTech || activeTags.size === 0) return projects;
     return projects.filter((project) =>
       project.tags.some((tag) => activeTags.has(tag)),
     );
-  }, [activeTags]);
+  }, [activeTags, showTech]);
 
   function toggleTag(tag: string) {
     setActiveTags((prev) => {
@@ -57,17 +59,21 @@ export function Home() {
         <h1>A directory of things I&apos;ve built</h1>
         <p>
           Full-stack apps, tools, and experiments spanning React, .NET, Azure,
-          and AI. Filter by tag to find what interests you, or browse everything
-          below.
+          and AI.{" "}
+          {showTech
+            ? "Filter by tag to find what interests you, or browse everything below."
+            : "Browse everything below."}
         </p>
       </section>
 
-      <TagFilter
-        groups={tagGroups}
-        activeTags={activeTags}
-        onToggle={toggleTag}
-        onClear={() => setActiveTags(new Set())}
-      />
+      {showTech && (
+        <TagFilter
+          groups={tagGroups}
+          activeTags={activeTags}
+          onToggle={toggleTag}
+          onClear={() => setActiveTags(new Set())}
+        />
+      )}
 
       <div className="project-grid">
         {visibleProjects.map((project) => (
