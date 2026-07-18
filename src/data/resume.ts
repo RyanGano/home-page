@@ -6,6 +6,7 @@ export type ResumeJob = {
   company: string;
   title: string;
   dates: string;
+  location?: string;
   highlights: string[];
 };
 
@@ -24,6 +25,8 @@ export const resume = {
   name: "Ryan Gano",
   title: "Senior Software Engineer",
   github: "https://github.com/ryangano",
+  site: "https://ryangano.com/resume",
+  siteLabel: "ryangano.com/resume",
 
   overview:
     "Senior Software Engineer with deep experience building scalable, cross-platform " +
@@ -35,7 +38,7 @@ export const resume = {
   impact: [
     {
       label: "Legacy system modernization",
-      text: "Leading a team transitioning a 15-year-old desktop application to a modern web/mobile architecture, delivering ahead of schedule.",
+      text: "Leading a team transitioning a 16-year-old desktop application to a modern web/mobile architecture, delivering ahead of schedule.",
     },
     {
       label: "Codebase simplification",
@@ -117,6 +120,7 @@ export const resume = {
       company: "Logos Bible Software",
       title: "Senior Software Engineer",
       dates: "Dec 2021 – Present",
+      location: "Remote",
       highlights: [
         "Leading a team converting 16 years of product design/delivery from a local desktop application into a Web/Desktop/Mobile implementation, building for scale and performance with TypeScript/React and many custom microservices.",
         "My team holds the highest sprint velocity per person and the lowest bug count across our dev organization.",
@@ -168,6 +172,7 @@ export const resume = {
   education: {
     school: "City University",
     degree: "BS in Computer Science",
+    year: "2005",
   },
 
   downloads: {

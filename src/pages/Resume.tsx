@@ -24,6 +24,9 @@ export function Resume() {
           >
             github.com/ryangano
           </a>
+          <a className="resume-contact-link" href={resume.site}>
+            {resume.siteLabel}
+          </a>
         </div>
       </header>
 
@@ -72,7 +75,10 @@ export function Resume() {
                 {job.title} <span className="resume-job-company">·</span>{" "}
                 {job.company}
               </h3>
-              <span className="resume-job-dates">{job.dates}</span>
+              <span className="resume-job-dates">
+                {job.dates}
+                {job.location ? ` · ${job.location}` : ""}
+              </span>
             </div>
             <ul className="resume-job-highlights">
               {job.highlights.map((h, j) => (
@@ -101,6 +107,7 @@ export function Resume() {
         <h2>Education</h2>
         <p>
           <strong>{resume.education.school}</strong> — {resume.education.degree}
+          {resume.education.year ? ` · ${resume.education.year}` : ""}
         </p>
       </section>
     </main>
