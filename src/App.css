@@ -267,13 +267,12 @@
 }
 
 .project-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
-  text-decoration: none;
-  color: inherit;
   box-shadow: var(--shadow);
   transition:
     transform 0.15s,
@@ -283,6 +282,12 @@
 .project-card:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
+}
+
+.project-card-main-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-card h3 {
@@ -301,6 +306,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+}
+
+.project-card-more-info {
+  align-self: flex-end;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-card-more-info:hover {
+  text-decoration: underline;
 }
 
 .tag-pill {

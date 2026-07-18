@@ -8,11 +8,28 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const { showTech } = useTechInfo();
+  const detailUrl = `/projects/${project.slug}`;
+  const liveUrl = project.links.live;
 
   return (
-    <Link to={`/projects/${project.slug}`} className="project-card">
-      <h3>{project.name}</h3>
-      <p className="project-card-tagline">{project.tagline}</p>
+    <div className="project-card">
+      {liveUrl ? (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-card-main-link"
+          aria-label={`Open ${project.name}`}
+        >
+          <h3>{project.name}</h3>
+          <p className="project-card-tagline">{project.tagline}</p>
+        </a>
+      ) : (
+        <Link to={detailUrl} className="project-card-main-link">
+          <h3>{project.name}</h3>
+          <p className="project-card-tagline">{project.tagline}</p>
+        </Link>
+      )}
       {showTech && (
         <div className="project-card-tags">
           {project.tags.slice(0, 5).map((tag) => (
@@ -27,6 +44,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
       )}
-    </Link>
+      {liveUrl && (
+        <Link to={detailUrl} className="project-card-more-info">
+          More info →
+        </Link>
+      )}
+    </div>
   );
 }
