@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const liveUrl = project.links.live;
 
   return (
-    <div className="project-card">
+    <div className={`project-card${showTech ? "" : " project-card-compact"}`}>
       {liveUrl ? (
         <a
           href={liveUrl}

@@ -281,6 +281,10 @@
     border-color 0.15s;
 }
 
+.project-card-compact {
+  min-height: 150px;
+}
+
 .project-card:hover {
   border-color: var(--accent-border);
   transform: translateY(-2px);
