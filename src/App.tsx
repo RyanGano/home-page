@@ -3,6 +3,7 @@ import { Route, Routes, useSearchParams } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { ProjectDetail } from "./pages/ProjectDetail";
+import { Resume } from "./pages/Resume";
 import { TechInfoContext } from "./context/techInfo";
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
       <footer className="site-footer">
