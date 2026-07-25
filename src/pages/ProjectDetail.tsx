@@ -81,15 +81,15 @@ export function ProjectDetail() {
       )}
 
       {showTech && (
-        <details className="project-detail-technical">
-          <summary>Technical details</summary>
+        <section className="project-detail-section project-detail-technical">
+          <h2>Technical details</h2>
           <p>{project.technicalDescription}</p>
           <ul className="tech-list">
             {project.techStack.map((tech) => (
               <li key={tech}>{tech}</li>
             ))}
           </ul>
-        </details>
+        </section>
       )}
     </main>
   );

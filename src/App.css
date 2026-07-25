@@ -479,13 +479,13 @@
   opacity: 0.8;
 }
 
-.project-detail-technical summary {
-  cursor: pointer;
+.project-detail-technical h2 {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--text);
+  margin: 0;
 }
 
 .project-detail-technical p {
