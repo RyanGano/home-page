@@ -20,16 +20,6 @@ export function ProjectDetail() {
       <h1>{project.name}</h1>
       <p className="project-detail-tagline">{project.tagline}</p>
 
-      {showTech && (
-        <div className="project-detail-tags">
-          {project.tags.map((tag) => (
-            <span key={tag} className="tag-pill">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
-
       <div className="project-detail-links">
         {project.links.live && (
           <a
@@ -83,6 +73,13 @@ export function ProjectDetail() {
       {showTech && (
         <section className="project-detail-section project-detail-technical">
           <h2>Technical details</h2>
+          <div className="project-detail-tags">
+            {project.tags.map((tag) => (
+              <span key={tag} className="tag-pill">
+                {tag}
+              </span>
+            ))}
+          </div>
           <p>{project.technicalDescription}</p>
           <ul className="tech-list">
             {project.techStack.map((tech) => (
