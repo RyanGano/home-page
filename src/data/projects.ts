@@ -40,9 +40,9 @@ export const projects: Project[] = [
     slug: "find-me",
     name: "Find Me",
     tagline:
-      "A weekly image-seek game: find a shape hidden in a painting and frame it just right",
+      "Race your friends to spot the shape hidden in a painting and match it to the example",
     description:
-      "A daily image-seek game. Each week a public-domain painting hides a small shape — a snowflake, a key, a crescent — and each day you have to find it, then pan, zoom, and rotate the painting until the shape sits on screen at the same size and angle as the badge in the corner. The painting starts blurred and the clock starts stopped; both begin on your first move, so there's no free look at the board. The puzzle gets harder every day of the week and is identical for every player, so times are comparable.",
+      "An image-seek game you can race your friends on. A small shape — a snowflake, a key, a crescent — is tucked somewhere in a famous painting, and you have to find it, then pan, zoom, and rotate until it sits at the same size and angle as the example in the corner. The painting changes weekly, but what you're looking for, and how hard it is to find, change daily. Can you find it and match it faster than your friends? There's only one way to know.",
     technicalDescription:
       "The whole game is one similarity transform mapping image space to screen, with every gesture folded in as a scale/rotation about a pivot plus a pan. Hidden shapes aren't painted into the images — each puzzle declares a few numbers and the shape is drawn in at run time — and an offline pipeline measures each shape's camouflage against the local paint texture to tune a Monday-to-Sunday difficulty ramp aimed at a target time-to-find.",
     tags: [
