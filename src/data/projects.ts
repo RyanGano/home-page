@@ -37,6 +37,40 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "find-me",
+    name: "Find Me",
+    tagline:
+      "A weekly image-seek game: find a shape hidden in a painting and frame it just right",
+    description:
+      "A daily image-seek game. Each week a public-domain painting hides a small shape — a snowflake, a key, a crescent — and each day you have to find it, then pan, zoom, and rotate the painting until the shape sits on screen at the same size and angle as the badge in the corner. The painting starts blurred and the clock starts stopped; both begin on your first move, so there's no free look at the board. The puzzle gets harder every day of the week and is identical for every player, so times are comparable.",
+    technicalDescription:
+      "The whole game is one similarity transform mapping image space to screen, with every gesture folded in as a scale/rotation about a pivot plus a pan. Hidden shapes aren't painted into the images — each puzzle declares a few numbers and the shape is drawn in at run time — and an offline pipeline measures each shape's camouflage against the local paint texture to tune a Monday-to-Sunday difficulty ramp aimed at a target time-to-find.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Canvas",
+      "GitHub Pages",
+      "Browser Game",
+    ],
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "HTML Canvas 2D",
+      "Vitest",
+      "Playwright (browser smoke tests)",
+      "oxlint",
+      "sharp (image resize pipeline)",
+      "Node tuning scripts (puzzle planning, camouflage solving)",
+      "GitHub Pages + GitHub Actions",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/find-me",
+      live: "https://findme.ryangano.com/",
+    },
+  },
+  {
     slug: "ai-mysteries",
     name: "AI Mysteries",
     tagline:
