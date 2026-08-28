@@ -307,4 +307,28 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "make-it-pour",
+    name: "Make it Pour",
+    tagline:
+      "A fast, touch-friendly arcade game: drag the bottle, hold to pour, fill the cups before the clock runs dry",
+    description:
+      "A fast, touch-friendly arcade game for phones and desktop. Drag the bottle, hold to pour, and fill the sliding cups before the 60-second clock runs out. Every filled cup raises a combo multiplier and adds a little time back, so a good streak keeps the round alive; golden cups pay triple and add even more. Cups get faster, thirstier, and more numerous as the round goes on, and your best score is saved in the browser.",
+    technicalDescription:
+      "One self-contained index.html with no build step, no dependencies, and no network calls — the whole game runs on a single device-pixel-ratio-aware canvas. Pointer Events unify mouse and multi-touch aiming, sound effects are synthesized on the fly with the Web Audio API, and the high score persists in localStorage.",
+    tags: ["Vanilla JS", "Canvas", "Browser Game", "GitHub Pages"],
+    techStack: [
+      "Vanilla HTML / CSS / JavaScript",
+      "HTML Canvas 2D (device-pixel-ratio aware)",
+      "Pointer Events (unified mouse + multi-touch input)",
+      "Web Audio API (procedural sound effects)",
+      "localStorage (persistent high score)",
+      "No build step, no dependencies",
+      "GitHub Pages",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/make-it-pour",
+      live: "https://ryangano.github.io/make-it-pour",
+    },
+  },
 ];
