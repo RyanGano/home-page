@@ -4,15 +4,42 @@ import { useTechInfo } from "../context/techInfo";
 
 interface ProjectCardProps {
   project: Project;
+  isPinned: boolean;
+  onTogglePin: () => void;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  isPinned,
+  onTogglePin,
+}: ProjectCardProps) {
   const { showTech } = useTechInfo();
   const detailUrl = `/projects/${project.slug}`;
   const liveUrl = project.links.live;
 
   return (
     <div className={`project-card${showTech ? "" : " project-card-compact"}`}>
+      <button
+        type="button"
+        className={`project-card-pin${isPinned ? " project-card-pin-active" : ""}`}
+        onClick={onTogglePin}
+        aria-label={`${isPinned ? "Unpin" : "Pin"} ${project.name}${isPinned ? "" : " to top"}`}
+        aria-pressed={isPinned}
+        title={`${isPinned ? "Unpin" : "Pin"} ${project.name}`}
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill={isPinned ? "currentColor" : "none"}
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m16 3 5 5-4 1-4 4v5l-2 2-2-7-7-2 2-2h5l4-4 1-4z" />
+          <path d="m9 15-5 5" />
+        </svg>
+      </button>
       {liveUrl ? (
         <a
           href={liveUrl}
