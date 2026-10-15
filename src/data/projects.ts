@@ -331,4 +331,36 @@ export const projects: Project[] = [
       live: "https://ryangano.github.io/make-it-pour",
     },
   },
+  {
+    slug: "legendary-picker",
+    name: "LegendaryPicker",
+    tagline:
+      "Builds a random, legal setup for the Marvel Legendary deck-building game",
+    description:
+      "A setup generator for the Marvel Legendary deck-building game. Choose how many people are playing and which base games and expansions to include, then get a random legal setup with a checklist of the cards and supplies to lay out. It supports First Edition, Villainous, and Revised rule editions, including compatible combinations of boxes.",
+    technicalDescription:
+      "A React frontend lets players select boxes, player count, and rules edition, while a .NET 10 Minimal API loads sourced box catalogs and generates a legal draw with its required setup components. The API returns the setup for the browser to render as a checklist; the catalog and game rules are stored as JSON data and covered by service tests.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      ".NET",
+      "Azure App Service",
+      "Game Companion",
+    ],
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "ASP.NET Core .NET 10 Minimal API",
+      "JSON-based game catalog and setup rules",
+      "Azure App Service",
+      "GitHub Pages",
+      "xUnit tests",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/LegendaryPicker",
+      live: "https://legendary.ryangano.com",
+    },
+  },
 ];
