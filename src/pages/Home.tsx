@@ -1,13 +1,52 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { projects } from "../data/projects";
 import { TAG_GROUPS } from "../data/tagGroups";
 import { ProjectCard } from "../components/ProjectCard";
 import { TagFilter } from "../components/TagFilter";
 import { useTechInfo } from "../context/techInfo";
 
+const PINNED_PROJECTS_STORAGE_KEY = "home-page:pinned-projects";
+
+function readPinnedProjectSlugs() {
+  try {
+    const cachedPins = window.localStorage.getItem(PINNED_PROJECTS_STORAGE_KEY);
+    if (!cachedPins) return [];
+
+    const parsedPins: unknown = JSON.parse(cachedPins);
+    if (!Array.isArray(parsedPins)) {
+      throw new TypeError("Saved pinned projects must be an array.");
+    }
+
+    const knownSlugs = new Set(projects.map((project) => project.slug));
+    return [
+      ...new Set(
+        parsedPins.filter(
+          (slug): slug is string =>
+            typeof slug === "string" && knownSlugs.has(slug),
+        ),
+      ),
+    ];
+  } catch (error) {
+    console.error("Could not load pinned projects from local storage.", error);
+    return [];
+  }
+}
+
 export function Home() {
   const { showTech } = useTechInfo();
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
+  const [pinnedSlugs, setPinnedSlugs] = useState(readPinnedProjectSlugs);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        PINNED_PROJECTS_STORAGE_KEY,
+        JSON.stringify(pinnedSlugs),
+      );
+    } catch (error) {
+      console.error("Could not save pinned projects to local storage.", error);
+    }
+  }, [pinnedSlugs]);
 
   const tagGroups = useMemo(() => {
     const present = new Set<string>();
@@ -35,11 +74,25 @@ export function Home() {
   }, []);
 
   const visibleProjects = useMemo(() => {
-    if (!showTech || activeTags.size === 0) return projects;
-    return projects.filter((project) =>
-      project.tags.some((tag) => activeTags.has(tag)),
-    );
-  }, [activeTags, showTech]);
+    const filteredProjects =
+      !showTech || activeTags.size === 0
+        ? projects
+        : projects.filter((project) =>
+            project.tags.some((tag) => activeTags.has(tag)),
+          );
+    const pinOrder = new Map(pinnedSlugs.map((slug, index) => [slug, index]));
+
+    return [...filteredProjects].sort((left, right) => {
+      const leftOrder = pinOrder.get(left.slug);
+      const rightOrder = pinOrder.get(right.slug);
+      if (leftOrder !== undefined && rightOrder !== undefined) {
+        return leftOrder - rightOrder;
+      }
+      if (leftOrder !== undefined) return -1;
+      if (rightOrder !== undefined) return 1;
+      return 0;
+    });
+  }, [activeTags, pinnedSlugs, showTech]);
 
   function toggleTag(tag: string) {
     setActiveTags((prev) => {
@@ -51,6 +104,14 @@ export function Home() {
       }
       return next;
     });
+  }
+
+  function togglePinnedProject(slug: string) {
+    setPinnedSlugs((prev) =>
+      prev.includes(slug)
+        ? prev.filter((pinnedSlug) => pinnedSlug !== slug)
+        : [...prev, slug],
+    );
   }
 
   return (
@@ -77,7 +138,12 @@ export function Home() {
 
       <div className="project-grid">
         {visibleProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            isPinned={pinnedSlugs.includes(project.slug)}
+            onTogglePin={() => togglePinnedProject(project.slug)}
+          />
         ))}
       </div>
 
