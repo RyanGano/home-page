@@ -38,7 +38,17 @@ function App() {
         <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
       <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Ryan Gano</p>
+        <p>
+          &copy; {new Date().getFullYear()} Ryan Gano
+          {" · "}
+          <a
+            href="https://github.com/RyanGano/ai-skills"
+            target="_blank"
+            rel="noreferrer"
+          >
+            AI skills
+          </a>
+        </p>
       </footer>
     </TechInfoContext.Provider>
   );

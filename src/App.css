@@ -105,6 +105,15 @@
   color: var(--text);
 }
 
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 /* Home page */
 
 .home {
