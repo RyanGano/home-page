@@ -363,4 +363,43 @@ export const projects: Project[] = [
       live: "https://legendary.ryangano.com",
     },
   },
+  {
+    slug: "prayers-needed",
+    name: "Prayers Needed",
+    tagline: "Ask for prayer, pray for someone, and see that people prayed",
+    description:
+      "A quiet place to ask for prayer or to pray for someone else, with no account needed for either. Tap the prayer hands and a counter goes up, so the person who asked can see that people prayed, and the next prayer appears straight away. Each request gets a private link for posting updates, marking it answered, or removing it, and every request is reviewed before it appears publicly.",
+    technicalDescription:
+      "A React site on GitHub Pages talks to a .NET 10 minimal API backed by Postgres, with the whole thing built to stay on free tiers. There are no accounts, so ownership rests on a random private link kept in the URL fragment and stored only as a hash. Every write passes through one normalization module and text stays plain text, while IP addresses are never stored.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      ".NET",
+      "PostgreSQL",
+      "Microsoft Entra ID",
+      "Azure App Service",
+      "GitHub Pages",
+      "Community",
+    ],
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "React Router",
+      "ASP.NET Core .NET 10 minimal API",
+      "Dapper + Npgsql",
+      "Neon Postgres",
+      "Microsoft Entra ID (MSAL / JWT auth for moderators)",
+      "Vitest",
+      "Playwright (browser tests)",
+      "xUnit integration tests against real Postgres",
+      "oxlint",
+      "Azure App Service",
+      "GitHub Pages + GitHub Actions",
+    ],
+    links: {
+      live: "https://prayersneeded.ryangano.com",
+    },
+  },
 ];
