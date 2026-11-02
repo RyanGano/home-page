@@ -294,7 +294,7 @@ export const projects: Project[] = [
     ],
     links: {
       repo: "https://github.com/RyanGano/score-keeper",
-      live: "https://witty-sky-0e20f291e.3.azurestaticapps.net/",
+      live: "https://scorekeeper.ryangano.com/",
     },
     relatedGames: [
       {
