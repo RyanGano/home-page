@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Route, Routes, useSearchParams } from "react-router-dom";
+import { lazy, Suspense, useState } from "react";
+import { Outlet, Route, Routes, useSearchParams } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { ProjectDetail } from "./pages/ProjectDetail";
@@ -7,7 +7,10 @@ import { Resume } from "./pages/Resume";
 import { TechInfoContext } from "./context/techInfo";
 import "./App.css";
 
-function App() {
+// The redesign lives under /v2 and loads only when visited.
+const V2App = lazy(() => import("./v2/V2App"));
+
+function ClassicLayout() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [showTech, setShowTech] = useState(
     () => searchParams.get("tech") === "on",
@@ -32,15 +35,31 @@ function App() {
   return (
     <TechInfoContext.Provider value={{ showTech, toggleTech }}>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
-      </Routes>
+      <Outlet />
       <footer className="site-footer">
         <p>&copy; {new Date().getFullYear()} Ryan Gano</p>
       </footer>
     </TechInfoContext.Provider>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route
+        path="/v2/*"
+        element={
+          <Suspense fallback={null}>
+            <V2App />
+          </Suspense>
+        }
+      />
+      <Route element={<ClassicLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
+      </Route>
+    </Routes>
   );
 }
 

@@ -23,8 +23,23 @@ export interface RelatedGame {
   amazonUrl: string;
 }
 
+/** How the v2 home page groups projects. */
+export type ProjectCategory = "game" | "tabletop" | "app";
+
+/** Display order and headings for the v2 project groups. */
+export const PROJECT_CATEGORIES: { id: ProjectCategory; label: string }[] = [
+  { id: "game", label: "Games & stories" },
+  { id: "tabletop", label: "Tabletop companions" },
+  { id: "app", label: "Apps & tools" },
+];
+
 export interface Project {
   slug: string;
+  category: ProjectCategory;
+  /** Year the project was started. */
+  year: number;
+  /** Path under public/ to a 16:10 screenshot of the live site. */
+  screenshot?: string;
   name: string;
   tagline: string;
   description: string;
@@ -38,6 +53,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "find-me",
+    category: "game",
+    year: 2026,
+    screenshot: "/screenshots/find-me.jpg",
     name: "Find Me",
     tagline:
       "Race your friends to spot the shape hidden in a painting and match it to the example",
@@ -66,12 +84,14 @@ export const projects: Project[] = [
       "GitHub Pages + GitHub Actions",
     ],
     links: {
-      repo: "https://github.com/RyanGano/find-me",
       live: "https://findme.ryangano.com/",
     },
   },
   {
     slug: "ai-mysteries",
+    category: "game",
+    year: 2026,
+    screenshot: "/screenshots/ai-mysteries.jpg",
     name: "AI Mysteries",
     tagline:
       "A growing library of interactive mystery stories with multiple endings",
@@ -108,6 +128,9 @@ export const projects: Project[] = [
   },
   {
     slug: "goal-reacher",
+    category: "app",
+    year: 2023,
+    screenshot: "/screenshots/goal-reacher.jpg",
     name: "Goal Reacher",
     tagline: "Financial tracking with shared household budgets and receipt OCR",
     description:
@@ -145,6 +168,9 @@ export const projects: Project[] = [
   },
   {
     slug: "route-weather-tracker",
+    category: "app",
+    year: 2026,
+    screenshot: "/screenshots/route-weather-tracker.jpg",
     name: "When to Drive",
     tagline: "Live road and weather conditions for a specific mountain drive",
     description:
@@ -182,6 +208,9 @@ export const projects: Project[] = [
   },
   {
     slug: "skull-king",
+    category: "tabletop",
+    year: 2024,
+    screenshot: "/screenshots/skull-king.jpg",
     name: "Skull King Scorer",
     tagline: "Digital scorekeeper for the Skull King card game",
     description:
@@ -222,6 +251,9 @@ export const projects: Project[] = [
   },
   {
     slug: "code-review-trainer",
+    category: "app",
+    year: 2025,
+    screenshot: "/screenshots/code-review-trainer.jpg",
     name: "Code Review Trainer",
     tagline: "AI-generated code samples for practicing code review skills",
     description:
@@ -250,6 +282,9 @@ export const projects: Project[] = [
   },
   {
     slug: "catandomizer",
+    category: "tabletop",
+    year: 2022,
+    screenshot: "/screenshots/catandomizer.jpg",
     name: "Catandomizer",
     tagline: "Generates random, valid board layouts for Settlers of Catan",
     description:
@@ -275,6 +310,9 @@ export const projects: Project[] = [
   },
   {
     slug: "score-keeper",
+    category: "tabletop",
+    year: 2023,
+    screenshot: "/screenshots/score-keeper.jpg",
     name: "Score Keeper",
     tagline: "A multi-game digital scorekeeper for tabletop board games",
     description:
@@ -309,6 +347,9 @@ export const projects: Project[] = [
   },
   {
     slug: "make-it-pour",
+    category: "game",
+    year: 2026,
+    screenshot: "/screenshots/make-it-pour.jpg",
     name: "Make it Pour",
     tagline:
       "A fast, touch-friendly arcade game: drag the bottle, hold to pour, fill the cups before the clock runs dry",
@@ -333,6 +374,9 @@ export const projects: Project[] = [
   },
   {
     slug: "legendary-picker",
+    category: "tabletop",
+    year: 2026,
+    screenshot: "/screenshots/legendary-picker.jpg",
     name: "LegendaryPicker",
     tagline:
       "Builds a random, legal setup for the Marvel Legendary deck-building game",
@@ -365,6 +409,9 @@ export const projects: Project[] = [
   },
   {
     slug: "prayers-needed",
+    category: "app",
+    year: 2026,
+    screenshot: "/screenshots/prayers-needed.jpg",
     name: "Prayers Needed",
     tagline: "Ask for prayer, pray for someone, and see that people prayed",
     description:

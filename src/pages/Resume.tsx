@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import { resume } from "../data/resume";
 import { ObfuscatedEmail } from "../components/ObfuscatedEmail";
 
-export function Resume() {
+interface ResumeProps {
+  /** Where "Back to projects" leads; the v2 site passes its own home. */
+  homePath?: string;
+}
+
+export function Resume({ homePath = "/" }: ResumeProps) {
   return (
     <main className="resume">
-      <Link to="/" className="back-link">
+      <Link to={homePath} className="back-link">
         ← Back to projects
       </Link>
 
