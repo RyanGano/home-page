@@ -38,7 +38,7 @@ export const resume = {
   impact: [
     {
       label: "Legacy system modernization",
-      text: "Leading a team transitioning a 16-year-old desktop application to a modern web/mobile architecture, delivering ahead of schedule.",
+      text: "Led a team transitioning a 16-year-old desktop application to a modern web/mobile architecture, delivering ahead of schedule.",
     },
     {
       label: "Codebase simplification",
@@ -122,8 +122,9 @@ export const resume = {
       dates: "Dec 2021 – Present",
       location: "Remote",
       highlights: [
-        "Leading a team converting 16 years of product design/delivery from a local desktop application into a Web/Desktop/Mobile implementation, building for scale and performance with TypeScript/React and many custom microservices.",
-        "My team holds the highest sprint velocity per person and the lowest bug count across our dev organization.",
+        "Part of a team dedicated to bringing Bible study tools to life for users hoping to get more out of their study.",
+        "Previously led a team converting 16 years of product design/delivery from a local desktop application into a Web/Desktop/Mobile implementation, building for scale and performance with TypeScript/React and many custom microservices.",
+        "While I led it, that team held the highest sprint velocity per person and the lowest bug count across our dev organization.",
         "Led a team tasked with shutting down 16 deeply integrated products/features — deleted 545k lines of code in a live, customer-facing product with zero major user-facing consequences.",
         "Improved sprint velocity per person from 6.9 to 11.3 while leading; helped resolve severe morale issues, with zero attrition during my time in leadership.",
         "Recognized as a key contributor on flagship Logos Bible Software: “Ryan single-handedly improved per-person velocity by joining the team.”",
