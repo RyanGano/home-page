@@ -122,7 +122,9 @@ export const resume = {
       dates: "Dec 2021 – Present",
       location: "Remote",
       highlights: [
-        "Part of a team dedicated to bringing Bible study tools to life for users hoping to get more out of their study.",
+        "Design and build the systems customers use to create and follow reading plans, from backend databases to frontend UI and the integration points between systems.",
+        "Ship features such as in-app audio and video across multiple platforms.",
+        "Work heavily with AI to speed up development, while improving the consistency and accuracy of how the team uses it.",
         "Previously led a team converting 16 years of product design/delivery from a local desktop application into a Web/Desktop/Mobile implementation, building for scale and performance with TypeScript/React and many custom microservices.",
         "While I led it, that team held the highest sprint velocity per person and the lowest bug count across our dev organization.",
         "Led a team tasked with shutting down 16 deeply integrated products/features — deleted 545k lines of code in a live, customer-facing product with zero major user-facing consequences.",
