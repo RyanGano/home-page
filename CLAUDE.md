@@ -23,7 +23,7 @@ A redesigned site lives under `/v2` (`src/v2/`) so it can be compared with the c
 It is lazy-loaded from `App.tsx`, reads the same `projects.ts` and `resume.ts`, and scopes its
 styles with a `v2` class on `<html>` plus `v2-` class names (`src/v2/v2.css`). It is marked
 `noindex`. Each project's `category`, `year` and `screenshot` fields are used only by v2;
-screenshots are 1120x700 JPEGs in `public/screenshots/` (the CSP only allows same-origin images).
+screenshots are 3:4 portrait JPEGs (900x1200, phone-sized viewport, showing the app in use) in `public/screenshots/` (the CSP only allows same-origin images).
 
 ## Content rules
 

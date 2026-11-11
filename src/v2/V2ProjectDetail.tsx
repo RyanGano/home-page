@@ -19,49 +19,52 @@ export function V2ProjectDetail() {
         ← All projects
       </Link>
 
-      <p className="v2-eyebrow">
-        {categoryLabel} · {project.year}
-      </p>
-      <h1>{project.name}</h1>
-      <p className="v2-detail-tagline">{project.tagline}</p>
+      <div className="v2-detail-top">
+        <div>
+          <p className="v2-eyebrow">
+            {categoryLabel} · {project.year}
+          </p>
+          <h1>{project.name}</h1>
+          <p className="v2-detail-tagline">{project.tagline}</p>
 
-      <div className="v2-detail-actions">
-        {project.links.live && (
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="v2-btn v2-btn-primary"
-          >
-            Open {project.name} <span aria-hidden="true">↗</span>
-          </a>
-        )}
-        {project.links.repo && (
-          <a
-            href={project.links.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="v2-btn v2-btn-secondary"
-          >
-            Source on GitHub
-          </a>
+          <div className="v2-detail-actions">
+            {project.links.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="v2-btn v2-btn-primary"
+              >
+                Open {project.name} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            {project.links.repo && (
+              <a
+                href={project.links.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="v2-btn v2-btn-secondary"
+              >
+                Source on GitHub
+              </a>
+            )}
+          </div>
+
+          <section className="v2-detail-section">
+            <h2>What is it?</h2>
+            <p>{project.description}</p>
+          </section>
+        </div>
+        {project.screenshot && (
+          <img
+            className="v2-detail-shot"
+            src={project.screenshot}
+            alt={`Screenshot of ${project.name}`}
+            width={900}
+            height={1200}
+          />
         )}
       </div>
-
-      {project.screenshot && (
-        <img
-          className="v2-detail-shot"
-          src={project.screenshot}
-          alt={`Screenshot of ${project.name}`}
-          width={1120}
-          height={700}
-        />
-      )}
-
-      <section className="v2-detail-section">
-        <h2>What is it?</h2>
-        <p>{project.description}</p>
-      </section>
 
       {project.relatedGames && project.relatedGames.length > 0 && (
         <section className="v2-detail-section">

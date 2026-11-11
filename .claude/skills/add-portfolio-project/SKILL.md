@@ -69,7 +69,7 @@ Open `src/data/projects.ts` and append a new object to the `projects` array matc
   slug: "kebab-case-name",       // used in the /projects/:slug URL
   category: "app",                // "game" | "tabletop" | "app" — the v2 home page group
   year: 2026,                     // year the project was started
-  screenshot: "/screenshots/kebab-case-name.jpg", // optional; 1120x700 JPEG of the live site in public/screenshots/
+  screenshot: "/screenshots/kebab-case-name.jpg", // optional; 900x1200 portrait JPEG of the live site in use in public/screenshots/
   name: "Display Name",
   tagline: "One short sentence shown on the card",
   description: "One paragraph for the detail page — what it does and why it exists.",

@@ -20,8 +20,8 @@ export function V2ProjectCard({
       src={project.screenshot}
       alt=""
       loading="lazy"
-      width={1120}
-      height={700}
+      width={900}
+      height={1200}
     />
   ) : (
     <span className="v2-card-shot-empty">{project.name}</span>

@@ -38,7 +38,7 @@ export interface Project {
   category: ProjectCategory;
   /** Year the project was started. */
   year: number;
-  /** Path under public/ to a 16:10 screenshot of the live site. */
+  /** Path under public/ to a 3:4 portrait screenshot of the live site in use. */
   screenshot?: string;
   name: string;
   tagline: string;

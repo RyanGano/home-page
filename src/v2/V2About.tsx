@@ -21,9 +21,10 @@ export function V2About({ activeSkill, onSelectSkill }: V2AboutProps) {
       <div className="v2-about-col">
         <h2 id="v2-about-title">About me</h2>
         <p className="v2-about-bio">
-          I&apos;m a senior software engineer at Logos Bible Software, where I
-          lead a team moving a 16-year-old desktop application to the web and
-          mobile. The projects above are what I build in my own time.
+          I&apos;m a senior software engineer at Logos Bible Software, on a team
+          dedicated to bringing Bible study tools to life for people who want to
+          get more out of their study. The projects above are what I build in my
+          own time.
         </p>
 
         <ul className="v2-jobs">
@@ -73,7 +74,7 @@ export function V2About({ activeSkill, onSelectSkill }: V2AboutProps) {
           ))}
         </div>
         <p className="v2-about-more">
-          At work I also use C#, C++, Python and SQL. The{" "}
+          At work I also use C#, C++ and SQL. The{" "}
           <Link to="/v2/resume">résumé</Link> has the full list.
         </p>
       </div>
