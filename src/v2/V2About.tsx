@@ -39,7 +39,7 @@ export function V2About({ activeSkill, onSelectSkill }: V2AboutProps) {
         </ul>
 
         <div className="v2-about-links">
-          <Link to="/v2/resume" className="v2-btn v2-btn-secondary">
+          <Link to="/resume" className="v2-btn v2-btn-secondary">
             Full résumé
           </Link>
           <a
@@ -75,7 +75,7 @@ export function V2About({ activeSkill, onSelectSkill }: V2AboutProps) {
         </div>
         <p className="v2-about-more">
           At work I also use C#, C++ and SQL. The{" "}
-          <Link to="/v2/resume">résumé</Link> has the full list.
+          <Link to="/resume">résumé</Link> has the full list.
         </p>
       </div>
     </section>

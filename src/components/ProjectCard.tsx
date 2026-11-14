@@ -14,7 +14,7 @@ export function ProjectCard({
   onTogglePin,
 }: ProjectCardProps) {
   const { showTech } = useTechInfo();
-  const detailUrl = `/projects/${project.slug}`;
+  const detailUrl = `/v1/projects/${project.slug}`;
   const liveUrl = project.links.live;
 
   return (

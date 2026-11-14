@@ -8,12 +8,12 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <a href="/" className="site-title">
+        <a href="/v1" className="site-title">
           Ryan Gano
         </a>
         <p className="site-subtitle">Software projects &amp; experiments</p>
         <nav className="site-header-nav">
-          <Link to="/resume" className="site-header-link">
+          <Link to="/v1/resume" className="site-header-link">
             Résumé
           </Link>
           <ObfuscatedEmail className="site-header-link site-header-email" />

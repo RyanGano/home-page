@@ -8,12 +8,12 @@ export function ProjectDetail() {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/v1" replace />;
   }
 
   return (
     <main className="project-detail">
-      <Link to="/" className="back-link">
+      <Link to="/v1" className="back-link">
         &larr; All projects
       </Link>
 

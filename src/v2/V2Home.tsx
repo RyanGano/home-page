@@ -91,7 +91,7 @@ export function V2Home() {
         <p className="v2-intro-text">
           I build software for a living and for fun. These are the side
           projects: games, tabletop companions and a few useful tools. Pick one
-          and open it, or read a little <Link to="/v2#about">about me</Link>.
+          and open it, or read a little <Link to="/#about">about me</Link>.
         </p>
       </section>
 

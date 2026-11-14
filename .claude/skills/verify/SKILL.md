@@ -18,27 +18,34 @@ npx vite preview --port 4199 --strictPort   # serves dist/ (run in background)
 
 ## Drive
 
-Playwright is available via `npx playwright` (Chromium installed globally). The project itself has no
-Playwright dep — install it in the scratchpad (`npm init -y && npm i playwright`) and run a `.mjs`
-script with `chromium.launch()` against `http://localhost:4199`.
+The project has no Playwright dep — install it in the scratchpad (`npm init -y && npm i playwright`)
+and run a `.mjs` script against `http://localhost:4199`. Its bundled Chromium may not be downloaded;
+`chromium.launch({ channel: "msedge" })` uses the installed Edge instead.
+
+## Main site (`/`)
 
 Useful selectors:
 
-- `.project-grid .project-card` — home grid cards (wait on this after `goto`)
-- `.tech-toggle` — header "Technical info" switch (`aria-pressed` reflects state; adds `?tech=on` to URL)
-- `.tag-filter-toggle` — "Filter by tag" expander (panel is collapsed by default; tag buttons only
-  exist after clicking it)
-- `.tag-chip` / `.tag-chip-active` — tag filter buttons
-- `.project-card-tags`, `.project-detail-tags`, `.project-detail-technical` — tech-info-gated sections
+- `.v2-card` — project cards (wait on this after `goto`); `.v2-group-title` — group headings
+- `.v2-search` — "Find a project…" box (matches name and tagline)
+- `.v2-chips .v2-chip` — project type chips; `.v2-skills .v2-chip` — skill chips in About
+- `.v2-pin` — pin button (`aria-pressed`); pins persist in `localStorage`
 
-## Flows worth driving
+Flows worth driving:
 
-- Home load → grid renders all projects
-- Tech toggle: default off (no tags/filter), on shows them, `/?tech=on` deep link defaults on
-- Tag filter: expand panel, click a tag, grid narrows; Clear restores
-- Card click → `/projects/:slug` detail page; missing slug redirects to `/`
+- Home load → 11 cards in three groups, no broken images, no horizontal overflow at 375px
+- Search narrows the cards; a type chip shows one group; a skill chip filters and "Show all" resets
+- Pinning adds a "Pinned" group at the top and survives a reload
+- "Open <name>" link has the project's live URL; "Details" goes to `/projects/:slug`
+- Missing slug and unknown paths redirect to `/`; `/v2/...` redirects to the same path without `/v2`
+- `/#about` scrolls to the About section; `/resume` renders with both download buttons
+
+## Classic site (`/v1`)
+
+Kept for comparison only. Check that `/v1` renders `.project-grid .project-card`, that its links stay
+under `/v1` (`/v1/projects/:slug`, `/v1/resume`), and that `<html>` loses the `v2` class there.
 
 ## Gotchas
 
-- SPA `Link` navigation drops `?tech=on` from the URL; state persists in memory, so that's expected.
-- The tag filter renders only 2 buttons until the panel is expanded — not a bug.
+- Card images are `loading="lazy"`; force them eager before a full-page screenshot.
+- On the classic site, `Link` navigation drops `?tech=on` from the URL; state persists in memory.

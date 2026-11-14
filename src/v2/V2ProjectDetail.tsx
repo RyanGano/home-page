@@ -6,7 +6,7 @@ export function V2ProjectDetail() {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
-    return <Navigate to="/v2" replace />;
+    return <Navigate to="/" replace />;
   }
 
   const categoryLabel = PROJECT_CATEGORIES.find(
@@ -15,7 +15,7 @@ export function V2ProjectDetail() {
 
   return (
     <main className="v2-main v2-detail">
-      <Link to="/v2" className="v2-link v2-back">
+      <Link to="/" className="v2-link v2-back">
         ← All projects
       </Link>
 

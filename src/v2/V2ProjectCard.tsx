@@ -12,7 +12,7 @@ export function V2ProjectCard({
   isPinned,
   onTogglePin,
 }: V2ProjectCardProps) {
-  const detailUrl = `/v2/projects/${project.slug}`;
+  const detailUrl = `/projects/${project.slug}`;
   const liveUrl = project.links.live;
 
   const shot = project.screenshot ? (

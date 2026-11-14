@@ -67,7 +67,7 @@ Open `src/data/projects.ts` and append a new object to the `projects` array matc
 ```ts
 {
   slug: "kebab-case-name",       // used in the /projects/:slug URL
-  category: "app",                // "game" | "tabletop" | "app" — the v2 home page group
+  category: "app",                // "game" | "tabletop" | "app" — the home page group it appears under
   year: 2026,                     // year the project was started
   screenshot: "/screenshots/kebab-case-name.jpg", // optional; 900x1200 portrait JPEG of the live site in use in public/screenshots/
   name: "Display Name",
@@ -92,7 +92,7 @@ npm run build
 ```
 
 Both must pass cleanly — the `Project` type will catch shape mistakes at compile time.
-Optionally run `npm run dev` and check `/` (card + tags appear, filter works) and
+Optionally run `npm run dev` and check `/` (card appears under its group, Open link works) and
 `/projects/<slug>` (detail page renders, links work) in a browser.
 
 ### 7. Report back
