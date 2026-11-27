@@ -449,4 +449,38 @@ export const projects: Project[] = [
       live: "https://prayersneeded.ryangano.com",
     },
   },
+  {
+    slug: "gano-family-recipes",
+    category: "app",
+    year: 2026,
+    name: "Gano Family Recipe Box",
+    tagline: "Family recipes, made easy to cook from a phone",
+    description:
+      'The Gano family\'s recipes as index cards in a wooden box, searchable by name or ingredient and sorted under category tabs. Each card has a batch scaler and ingredients you can tick off, and cook mode walks through one big step per screen with that step\'s amounts. You can move between steps hands-free by saying "next" or "back", have each step read aloud, and start timers that keep running between steps and survive a reload. The screen stays awake while you cook.',
+    technicalDescription:
+      "A React single-page app with no backend: each recipe is a typed TypeScript module, and the app reaches them only through one API file so a real database could replace them later. Cook mode is built on browser APIs: Web Speech for voice commands and read-aloud, the Screen Wake Lock API to keep the phone awake, Web Audio for timer chimes, and localStorage so timers and your place in a recipe survive a reload.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "GitHub Pages",
+      "Web Speech API",
+      "Cooking",
+    ],
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "Web Speech API (voice commands and read-aloud)",
+      "Screen Wake Lock API",
+      "Web Audio API (timer chimes)",
+      "localStorage (timers and cook-mode progress)",
+      "Vitest (recipe consistency checks + unit tests)",
+      "GitHub Pages + GitHub Actions",
+    ],
+    links: {
+      repo: "https://github.com/RyanGano/gano-family-recipes",
+      live: "https://recipes.ryangano.com/",
+    },
+  },
 ];
