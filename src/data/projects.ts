@@ -453,6 +453,7 @@ export const projects: Project[] = [
     slug: "gano-family-recipes",
     category: "app",
     year: 2026,
+    screenshot: "/screenshots/gano-family-recipes.jpg",
     name: "Gano Family Recipe Box",
     tagline: "Family recipes, made easy to cook from a phone",
     description:
