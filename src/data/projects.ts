@@ -450,6 +450,48 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "push-n-pull-trivia",
+    category: "game",
+    year: 2026,
+    screenshot: "/screenshots/push-n-pull-trivia.jpg",
+    name: "Push-n-Pull Trivia",
+    tagline:
+      "A trivia tug of war you play one turn at a time with a friend or a stranger",
+    description:
+      "A flag sits in the middle of a rope. On your turn you answer three questions, picking easy, medium or hard before each one, and every right answer pulls the flag toward you: one notch, two or three. Then your opponent takes a turn and pulls it back. Drag the flag ten notches to your end and you win. Send a friend a five-letter code or get matched with someone new, turn on notifications to hear when it's your move, and take your turn whenever you like. There's no account, just a name.",
+    technicalDescription:
+      "A React site on GitHub Pages talks to a .NET 10 minimal API on Azure's free tier, with SQLite on the App Service's disk. The server is the only judge: the browser never sees an answer before it's given, the server's clock decides the 20 seconds, and asking again returns the same question, so a reload can't swap a hard one out. Turn alerts go out through Web Push, and the questions mix a bundled set with a monthly copy of Open Trivia DB.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      ".NET",
+      "SQLite",
+      "Azure App Service",
+      "GitHub Pages",
+      "Browser Game",
+    ],
+    techStack: [
+      "React 19",
+      "TypeScript",
+      "Vite 8",
+      "React Router",
+      "zod",
+      "ASP.NET Core .NET 10 minimal API",
+      "Dapper + SQLite",
+      "Web Push (VAPID)",
+      "Microsoft Entra ID (admin stats)",
+      "Vitest + Testing Library",
+      "xUnit integration tests",
+      "oxlint",
+      "Azure App Service (Free F1)",
+      "GitHub Pages + GitHub Actions",
+    ],
+    links: {
+      live: "https://trivia.ryangano.com",
+    },
+  },
+  {
     slug: "gano-family-recipes",
     category: "app",
     year: 2026,
